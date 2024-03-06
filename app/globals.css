@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image_class {
+  @apply w-full border-LightPink border-4 h-40 hover:scale-110 cursor-pointer transition-all ease-linear object-cover rounded-md;
+}
+
+.auth {
+  background: url("../assets/images/authbg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh + 50px);
+  position: relative;
+  padding-top: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.auth::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.auth form {
+  border-radius: 10px;
+  z-index: 10;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.08);
+  filter: blur(0.9);
+}
+
+.custom-loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, #766df4) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 36deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 9px),
+      #000 calc(100% - 8px)
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: s4 1s infinite steps(10);
+}
+@keyframes s4 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 580px) {
+  .auth {
+    height: 100%;
+  }
+}
